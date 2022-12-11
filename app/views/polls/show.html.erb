@@ -3,9 +3,13 @@
 <%= render @poll %>
 
 <div>
-  <%= link_to "Add answer to this pool", new_poll_poll_answer_path(@poll) %> |
-  <%= link_to "Edit this poll", edit_poll_path(@poll) %> |
+  <% if @poll.user_id == current_user&.id %>
+    <%= link_to "Add answer to this pool", new_poll_poll_answer_path(@poll) %> |
+    <%= link_to "Edit this poll", edit_poll_path(@poll) %> |
+  <% end %>
   <%= link_to "Back to polls", polls_path %>
 
-  <%= button_to "Destroy this poll", @poll, method: :delete %>
+  <% if @poll.user_id == current_user&.id %>
+    <%= button_to "Destroy this poll", @poll, method: :delete %>
+  <% end %>
 </div>
