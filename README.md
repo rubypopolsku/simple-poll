@@ -1,24 +1,12 @@
-# README
+# Simple poll - minimal, no-js poll app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install & running
 
-Things you may want to cover:
+The app requires ruby 3.1.0 and postgres 14.5
+Both of them you can isntall with asdf
 
-* Ruby version
+### First setup
+Everything is in `bin/setup`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Running
+`rails server`
