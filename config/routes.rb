@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :polls
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :polls do
+    resources :poll_answers do
+      resources :votes
+    end
+  end
 
-  # Defines the root path route ("/")
   root "polls#index"
 end

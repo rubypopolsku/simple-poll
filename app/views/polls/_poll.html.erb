@@ -4,7 +4,7 @@
     <%= poll.question %>
   </p>
   <% poll.poll_answers.each do |pa| %>
-    <p><%= pa.answer %></p>
+    <%= button_to pa.answer, poll_poll_answer_votes_path(poll_id: poll.id, poll_answer_id: pa.id), method: :post %>
   <%end %>
 
 </div>
