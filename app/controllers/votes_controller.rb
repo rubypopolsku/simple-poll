@@ -4,7 +4,7 @@ class VotesController < ApplicationController
 
       respond_to do |format|
         if @vote.save
-          format.html { redirect_to poll_url(@vote.poll), notice: "Poll was successfully created." }
+          format.html { redirect_to poll_results_url(@vote.poll), notice: "Vote was successfully created." }
         else
           format.html { redirect_to poll_url(@vote.poll), notice: "Something went wrong" }
         end
