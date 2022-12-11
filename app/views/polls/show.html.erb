@@ -3,6 +3,7 @@
 <%= render @poll %>
 
 <div>
+  <%= link_to "Add answer to this pool", new_poll_poll_answer_path(@poll) %> |
   <%= link_to "Edit this poll", edit_poll_path(@poll) %> |
   <%= link_to "Back to polls", polls_path %>
 
