@@ -6,7 +6,12 @@
   </p>
   <p> All votes: <%= @poll.votes.count %> </p>
   <% @poll.poll_answers.each do |pa| %>
-   <p> <%= pa.answer %> <%= (pa.votes.count.to_f/@poll.votes.count.to_f*100).to_i %>% (<%= pa.votes.count %>)</p>
+    <% if pa.votes.any? %>
+      <p> <%= pa.answer %> <%= (pa.votes.count.to_f/@poll.votes.count.to_f*100).to_i %>% (<%= pa.votes.count %>)</p>
+    <% else %>
+    <p> <%= pa.answer %> (<%= pa.votes.count %>)</p>
+
+    <% end %>
 
   <%end %>
 

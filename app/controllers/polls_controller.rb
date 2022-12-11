@@ -4,7 +4,7 @@ class PollsController < ApplicationController
 
   # GET /polls
   def index
-    @polls = Poll.joins(:votes).where(user_id: current_user.id).or(Poll.joins(:votes).where(votes: {user_id: current_user.id}))
+    @polls = Poll.includes(:votes).where(user_id: current_user.id).or(Poll.includes(:votes).where(votes: {user_id: current_user.id}))
   end
 
   # GET /polls/1
