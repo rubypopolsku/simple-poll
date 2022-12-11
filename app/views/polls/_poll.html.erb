@@ -3,5 +3,8 @@
     <strong>Question:</strong>
     <%= poll.question %>
   </p>
+  <% poll.poll_answers.each do |pa| %>
+    <p><%= pa.answer %></p>
+  <%end %>
 
 </div>
