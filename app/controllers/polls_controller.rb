@@ -1,5 +1,5 @@
 class PollsController < ApplicationController
-  before_action :set_poll, only: %i[ show edit update destroy ]
+  before_action :set_poll, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: [:show]
 
   # GET /polls
@@ -47,13 +47,14 @@ class PollsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_poll
-      @poll = Poll.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def poll_params
-      params.require(:poll).permit(:question)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_poll
+    @poll = Poll.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def poll_params
+    params.require(:poll).permit(:question)
+  end
 end
